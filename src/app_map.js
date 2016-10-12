@@ -3,7 +3,7 @@
 import React from 'react'
 import { Route } from 'react-router'
 
-import * as Pages  from  '../web/src/pages/page_index'
+import * as Pages  from  './pages/page_index'
 
 
 // types
@@ -26,7 +26,7 @@ const pages: pageDict = {
         path: '/',
         open: true,
         component: Pages.HelloWorld,
-    }
+    },
 }
 
 // utils
@@ -45,10 +45,9 @@ function routes() {
     })
 }
 
-const pageMap = appMap.buildMap(pages)
 
 export {
-    pageMap,
+    pages,
     buildProps,
     routes,
 }
