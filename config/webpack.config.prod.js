@@ -30,21 +30,21 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.json'],
   },
   resolveLoader: {
-    root: [paths.ownNodeModules, paths.appSrc],
+    root: paths.ownNodeModules,
     moduleTemplates: ['*-loader']
   },
   module: {
     preLoaders: [
       {
-        test: [/\.js$/, /\.jsx?$/],
+        ttest: [/\.js$/, /\.jsx?$/],
         loader: 'eslint',
         include: paths.appSrc
       }
     ],
     loaders: [
       {
-        test: [/\.js$/, /\.jsx?$/],
-        include: [paths.appSrc, paths.common],
+        ttest: [/\.js$/, /\.jsx?$/],
+        include: paths.appSrc,
         loader: 'babel',
         query: require('./babel.prod')
       },
@@ -79,7 +79,7 @@ module.exports = {
   eslint: {
     // TODO: consider separate config for production,
     // e.g. to enable no-console and no-debugger only in prod.
-    configFile: path.join(paths.root, 'eslint.js'),
+    configFile: path.join(__dirname, 'eslint.js'),
     useEslintrc: false
   },
   postcss: function() {

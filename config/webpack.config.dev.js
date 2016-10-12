@@ -23,7 +23,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.json'],
   },
   resolveLoader: {
-    root: [paths.ownNodeModules, paths.appSrc],
+    root: paths.ownNodeModules,
     moduleTemplates: ['*-loader']
   },
   module: {
@@ -37,7 +37,7 @@ module.exports = {
     loaders: [
       {
         test: [/\.js$/, /\.jsx?$/],
-        include: [paths.appSrc, paths.common],
+        include: paths.appSrc,
         loader: 'babel',
         query: require('./babel.dev')
       },
@@ -64,7 +64,7 @@ module.exports = {
     ]
   },
   eslint: {
-    configFile: path.join(paths.root, 'eslint.js'),
+    configFile: path.join(__dirname, 'eslint.js'),
     useEslintrc: false
   },
   postcss: function() {

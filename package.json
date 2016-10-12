@@ -58,9 +58,9 @@
     "redux-storage-decorator-immutablejs": "^1.0.1"
   },
   "scripts": {
-    "web": "node ./web/scripts/start.js",
-    "build": "node ./web/scripts/build.js",
-    "lint": "node_modules/.bin/eslint web/src/ --ext .js,.jsx",
+    "web": "node ./scripts/start.js",
+    "build": "node ./scripts/build.js",
+    "lint": "node_modules/.bin/eslint src/ --ext .js,.jsx",
     "typecheck": "node_modules/.bin/flow",
     "preflight": "npm run typecheck ; npm run lint"
   },
