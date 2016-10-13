@@ -4,7 +4,7 @@ import { resolve } from 'url'
 import { formatQueryParams } from '../util/api_utils'
 import store from '../redux/store'
 
-export const apiHost = 'https://faer.cri.uic.edu/api/v1/'
+export const apiHost = 'https://olioapps.io/v1/'
 
 type MethodType = 'GET' | 'POST' | 'PUT' | 'DELETE'
 
