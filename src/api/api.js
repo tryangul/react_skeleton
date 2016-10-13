@@ -6,8 +6,10 @@ import store from '../redux/store'
 
 export const apiHost = 'https://faer.cri.uic.edu/api/v1/'
 
+type MethodType = 'GET' | 'POST' | 'PUT' | 'DELETE'
+
 export function fetchify(path: string): Function {
-    return (method: string) => (body: Object, queryParams: Object, headers: Object) => {
+    return (method: MethodType) => (body: Object, queryParams: Object, headers: Object) => {
         const url = resolve(apiHost, path) + formatQueryParams(queryParams)
         return fetch(url, {
             method: method,
